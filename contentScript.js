@@ -21,7 +21,7 @@ if (window.location.href.indexOf("americanbanker.com") !== -1) {
 	const paywall = document.getElementsByClassName(
 		"embargo-content"
 	);
-	if (paywall && paywall.length>0 ) {
+	if (paywall && paywall.length > 0) {
 		paywall[0].className = "";
 	}
 }
@@ -77,30 +77,36 @@ if (window.location.href.indexOf("mexiconewsdaily.com") !== -1) {
 }
 
 if (window.location.href.indexOf("the-american-interest.com") !== -1) {
-  const counter = document.getElementById('article-counter') || false;
-  if (counter) {
-    counter.remove();
-    counter = false; 
-  }
+	const counter = document.getElementById('article-counter') || false;
+	if (counter) {
+		counter.remove();
+		counter = false;
+	}
 }
 
 if (window.location.href.indexOf("nzherald.co.nz") !== -1) {
-  const paywall = document.getElementById(
-    "article-content"
-  );
-    if (paywall) {
-      paywall.classList.remove('premium-content');
-      paywall.classList.add('full-content');
-      var paras = paywall.querySelectorAll("p, span, h2, div");
-	  var delClass = "";
-	  for (var i = paras.length; i--;) {
-	    if (delClass == "") {
-		  delClass = paras[i].className;
+	const paywall = document.getElementById(
+		"article-content"
+	);
+	if (paywall) {
+		paywall.classList.remove('premium-content');
+		paywall.classList.add('full-content');
+		var paras = paywall.querySelectorAll("p, span, h2, div");
+		var delClass = "";
+		for (var i = paras.length; i--;) {
+			if (delClass == "") {
+				delClass = paras[i].className;
+			}
+			paras[i].classList.remove(delClass);
+			paras[i].removeAttribute('style');
 		}
-        paras[i].classList.remove(delClass);
-        paras[i].removeAttribute('style');
-      }
-  }
+	}
+}
+
+if (window.location.href.indexOf("bloomberg.com") !== -1) {
+	console.log('inside bloom');
+	const paywall = document.getElementById('paywall-banner');
+	removeDOMElement(paywall);
 }
 
 function removeDOMElement(...elements) {
