@@ -34,7 +34,7 @@ if (window.location.href.indexOf('telegraaf.nl') !== -1) {
 }
 
 if (window.location.href.indexOf('ed.nl') !== -1) {
-	const paywall = document.querySelector('.article__component.article__component--paywall-module-notification');
+	let paywall = document.querySelector('.article__component.article__component--paywall-module-notification');
 	if (paywall) {
 		paywall.remove();
 		paywall = null;
@@ -77,7 +77,7 @@ if (window.location.href.indexOf("mexiconewsdaily.com") !== -1) {
 }
 
 if (window.location.href.indexOf("the-american-interest.com") !== -1) {
-	const counter = document.getElementById('article-counter') || false;
+	let counter = document.getElementById('article-counter') || false;
 	if (counter) {
 		counter.remove();
 		counter = false;
